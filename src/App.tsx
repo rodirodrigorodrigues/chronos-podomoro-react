@@ -16,7 +16,7 @@ function App() {
       <Container>
         <form className="form">
           <div className="formRow">
-            <DefaultInput labelText="Label" id="meuInput" type="text" />
+            <DefaultInput labelText="Label" id="meuInput" type="text" placeholder="Digite algo" />
           </div>
           <div className="formRow">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>

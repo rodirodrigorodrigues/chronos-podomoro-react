@@ -1,8 +1,28 @@
-.container {
-  /* clamp(valor_mínimo, valor_ideal, valor_máximo) */
-  /* 25vw = 25% da largura da tela. */
-  font-size: clamp(8rem, 25vw, 16rem);
-  font-weight: bold;
+.input {
+  background-color: transparent;
   text-align: center;
-  line-height: 1.5;
+  border: none;
+  font-size: 1.8rem;
+  padding: 0.8rem;
+  color: var(--text-default);
+  outline: none;
+  border: 0.2rem solid transparent;
+  border-bottom: 0.2rem solid var(--primary);
+  transition: all 0.1s ease-in-out;
+}
+
+.input:focus {
+  border-radius: 0.8rem;
+  border: 0.2rem solid var(--primary);
+}
+
+input:disabled {
+  border-bottom: 0.2rem solid var(--disabled);
+  color: var(--text-muted);
+}
+
+.input::placeholder {
+  color: var(--gray-500);
+  font-size: 1.4rem;
+  font-style: italic;
 }
