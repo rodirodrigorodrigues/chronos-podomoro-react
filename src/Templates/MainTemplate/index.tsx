@@ -1,5 +1,6 @@
-import { Container, Menu } from "lucide-react";
+import { Container } from "../../components/Container";
 import { Logo } from "../../components/Logo";
+import { Menu } from "../../components/Menu";
 import { Footer } from "../../components/Footer";
 
 type MainTemplateProps = {
