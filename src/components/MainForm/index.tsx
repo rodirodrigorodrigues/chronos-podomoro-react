@@ -17,11 +17,8 @@ export function MainForm() {
   const nextCycle = getNextCycle(state.currentCycle);
   const nextCycleType = getNextCycleType(nextCycle);
 
-  console.log("Next cycle:", nextCycle);
-
   function handleCreateNewTask(e: React.FormEvent) {
     e.preventDefault();
-    // console.log(taskName);
     // Input is invalid
     if (taskNameInput.current === null) return;
 
@@ -38,7 +35,7 @@ export function MainForm() {
       startDate: Date.now(),
       completeDate: null,
       interruptDate: null,
-      duration: 1,
+      duration: state.config[nextCycleType],
       type: nextCycleType,
     };
 
