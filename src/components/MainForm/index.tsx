@@ -7,8 +7,8 @@ import type { TaskModel } from "../../models/TaskModel";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextCycleType } from "../../utils/getNextCycleType";
-import { formatSecondsToMinutes } from "../../utils/formatSecondsToMinutes";
 import { TaskActionTypes } from "../../contexts/TaskContext/taskAction";
+import { Tips } from "../Tips";
 
 export function MainForm() {
   // const [taskName, setTaskName] = useState("");
@@ -63,7 +63,7 @@ export function MainForm() {
         />
       </div>
       <div className="formRow">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <Tips />
       </div>
       {state.currentCycle > 0 && (
         <div className="formRow">

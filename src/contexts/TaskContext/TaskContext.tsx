@@ -5,7 +5,7 @@ import type { TaskActionModel } from "./taskAction";
 
 const initialTextContextValue = {
   state: initialTaskState,
-  dispatch: () => {},
+  dispatch: () => {}, // or useSate
 };
 
 type TaskContextProps = {

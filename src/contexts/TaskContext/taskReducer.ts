@@ -3,6 +3,7 @@ import { formatSecondsToMinutes } from "../../utils/formatSecondsToMinutes";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { TaskActionTypes, type TaskActionModel } from "./taskAction";
 
+// Contains logical to update the task state based on dispatched actions
 export function taskReducer(state: TaskStateModel, action: TaskActionModel) {
   switch (action.type) {
     case TaskActionTypes.START_TASK: {
