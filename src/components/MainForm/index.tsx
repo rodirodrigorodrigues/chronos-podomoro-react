@@ -9,6 +9,7 @@ import { getNextCycle } from "../../utils/getNextCycle";
 import { getNextCycleType } from "../../utils/getNextCycleType";
 import { TaskActionTypes } from "../../contexts/TaskContext/taskAction";
 import { Tips } from "../Tips";
+import { showMessage } from "../../adapters/showMessage";
 
 export function MainForm() {
   // const [taskName, setTaskName] = useState("");
@@ -21,13 +22,14 @@ export function MainForm() {
 
   function handleCreateNewTask(e: React.FormEvent) {
     e.preventDefault();
+    showMessage.dismiss();
     // Input is invalid
     if (taskNameInput.current === null) return;
 
     const taskName = taskNameInput.current.value.trim();
 
     if (!taskName) {
-      alert("Please enter a valid task name.");
+      showMessage.warn("Please enter a valid task name.");
       return;
     }
 
@@ -42,10 +44,12 @@ export function MainForm() {
     };
 
     dispatch({ type: TaskActionTypes.START_TASK, payload: newTask });
+    showMessage.sucess("Task created with sucess.");
   }
 
   function handleInterruptTask() {
     dispatch({ type: TaskActionTypes.INTERRUPT_TASK });
+    showMessage.error("Interrupt task.")
   }
 
   return (
