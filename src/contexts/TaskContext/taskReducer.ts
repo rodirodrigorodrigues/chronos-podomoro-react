@@ -59,6 +59,12 @@ export function taskReducer(state: TaskStateModel, action: TaskActionModel) {
         formattedSecondsRemaining: formatSecondsToMinutes(secondsRemaining),
       };
     }
+    case TaskActionTypes.CHANGE_SETTINGS: {
+      return {
+        ...state,
+        config: { ...action.payload },
+      };
+    }
   }
   return state;
 }

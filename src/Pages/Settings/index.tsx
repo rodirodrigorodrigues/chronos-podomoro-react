@@ -7,9 +7,10 @@ import { Heading } from "../../components/Heading";
 import { useRef } from "react";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
 import { showMessage } from "../../adapters/showMessage";
+import { TaskActionTypes } from "../../contexts/TaskContext/taskAction";
 
 export function Settings() {
-  const { state } = useTaskContext();
+  const { state, dispatch } = useTaskContext();
 
   const workTimeInput = useRef<HTMLInputElement>(null);
   const shortBreakTimeInput = useRef<HTMLInputElement>(null);
@@ -48,6 +49,15 @@ export function Settings() {
 
     formErrors.forEach((error) => {
       showMessage.error(error);
+    });
+
+    dispatch({
+      type: TaskActionTypes.CHANGE_SETTINGS,
+      payload: {
+        workTime,
+        shortBreakTime,
+        longBreakTime,
+      },
     });
   }
   return (
